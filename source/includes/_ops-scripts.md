@@ -74,11 +74,11 @@ ZABBIX_SERVER="zabbix6-qa.redislabs.com"
 [Procedure](https://redislabs.atlassian.net/wiki/spaces/DevOps/pages/471793685/Create+Cluster+-+AWS).
 
 Information Gathering
-- Onboarding Questionnaire
-- Explicit customer confirmation of static IPs and CIDRs provided
+* Onboarding Questionnaire
+* Explicit customer confirmation of static IPs and CIDRs provided
 
 Configuration:
-- Populating the config.sh
+* Populating the config.sh
 
 
 ## Add New Node
