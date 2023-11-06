@@ -2,6 +2,10 @@
 
 ## Create Cluster
 
+```shell
+/var/ops-scripts-home/RedisLabs/bin$ mkdir /var/ops-scripts-home/RedisLabs/cluster/zc2-dtran-qa.us-west-1.ec2.qa-cloud.redislabs.com/
+/var/ops-scripts-home/RedisLabs/bin$ cp $DEVOPS_HOME/bin/sample_config.sh $DEVOPS_HOME/cluster/zc2-dtran-qa.us-west-1.ec2.qa-cloud.redislabs.com/config.sh
+```
 > sample_config.sh
 
 ```shell
@@ -73,15 +77,21 @@ ZABBIX_SERVER="zabbix6-qa.redislabs.com"
 ```
 [Procedure](https://redislabs.atlassian.net/wiki/spaces/DevOps/pages/471793685/Create+Cluster+-+AWS).
 
-Information Gathering
+**Information Gathering**
 
 * Onboarding Questionnaire
 * Explicit customer confirmation of static IPs and CIDRs provided
 
-Configuration:
+**Configuration:**
 
 * Populating the config.sh
 
+**Provision:**
+
+* Creating the instances and bootstrap
+* Adding SSH sessions to SecureCRT to access cluster
+* Adding host objects to Zabbix for monitoring
+* Adding to SM/BackOffice to allow access to Cloud service
 
 ## Add New Node
 [Procedure](https://redislabs.atlassian.net/wiki/spaces/DevOps/pages/438305219/Add+a+New+Node+-+AWS).
