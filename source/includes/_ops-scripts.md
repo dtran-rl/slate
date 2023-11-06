@@ -99,7 +99,24 @@ ZABBIX_SERVER="zabbix6-qa.redislabs.com"
 * Cluster notes - contains details and configuration specific to the cluster
 * CMDB - tracks all infrastructure changes and service level configurations
 
-**Exercise #1**
+[Recording](https://drive.google.com/file/d/1Y5iYr72w1P3NrZAHh7Hpa316-mcaEtot/view?usp=drive_link) 
+
+## Add New Node
+[Procedure](https://redislabs.atlassian.net/wiki/spaces/DevOps/pages/438305219/Add+a+New+Node+-+AWS)
+
+## Replace Faulty Node
+[Procedure](https://redislabs.atlassian.net/wiki/spaces/DevOps/pages/438600189/Replace+Faulty+Node+-+AWS)
+
+## Replace Healthy Node
+[Procedure](https://redislabs.atlassian.net/wiki/spaces/DevOps/pages/470089741/Replace+Healthy+Node+-+AWS)
+
+## Remove Node
+[Procedure](https://redislabs.atlassian.net/wiki/spaces/DevOps/pages/438338070/Remove+a+Node+-+AWS)
+
+## Remove Cluster
+[Procedure](https://redislabs.atlassian.net/wiki/spaces/DevOps/pages/471793668/Remove+Cluster+-+AWS)
+
+## Exercise #1
 
 1. Create single AZ AWS Cluster in us-west
     * Cluster version - 6.0.12-58
@@ -113,7 +130,7 @@ ZABBIX_SERVER="zabbix6-qa.redislabs.com"
     * Observe the cnm_exec.log, cluster_wd.log, node_wd.log
 8. Remove cluster + cleanup
 
-**Exercise #2:**
+## Exercise #2
 
 1. Create MZ AWS Cluster in us-east-1
 2. Configure as Off-SM Cluster
@@ -130,7 +147,7 @@ ZABBIX_SERVER="zabbix6-qa.redislabs.com"
     * Removing the data folder (.initialized file), $DEVOPS_HOME/cluster/YOUR_CLUSTER_FQDN/data
     * Clearing VPC details in the config.sh
     * Chef environment cleanup, one-liner to get commands to run
-    * `for i in environment node "data bag" client ; do echo knife $i delete `knife $i list | grep CHANGE_TO_YOUR_FQDN` ; done``
+    * ```for i in environment node "data bag" client ; do echo knife $i delete `knife $i list | grep CHANGE_TO_YOUR_FQDN` ; done```
     * Removing your cluster KeyPair from AWS viconsole
 * When creating in us-west-1  observe the limitations of the region's instance types and AZ
     * May need to specify a different AZ (ex: us-west-1b)
@@ -141,20 +158,3 @@ ZABBIX_SERVER="zabbix6-qa.redislabs.com"
 * When removing your cluster from BackOffice CGs, you may see a message regarding the Cluster has BDBs
     * Verify the DB does not exist on your cluster or your SM UI (+subscription)
     * Safe to remove cluster from CGs
-
-[Recording](https://drive.google.com/file/d/1Y5iYr72w1P3NrZAHh7Hpa316-mcaEtot/view?usp=drive_link) 
-
-## Add New Node
-[Procedure](https://redislabs.atlassian.net/wiki/spaces/DevOps/pages/438305219/Add+a+New+Node+-+AWS).
-
-## Replace Faulty Node
-[Procedure](https://redislabs.atlassian.net/wiki/spaces/DevOps/pages/438600189/Replace+Faulty+Node+-+AWS).
-
-## Replace Healthy Node
-[Procedure](https://redislabs.atlassian.net/wiki/spaces/DevOps/pages/470089741/Replace+Healthy+Node+-+AWS).
-
-## Remove Node
-[Procedure](https://redislabs.atlassian.net/wiki/spaces/DevOps/pages/438338070/Remove+a+Node+-+AWS)
-
-## Remove Cluster
-[Procedure](https://redislabs.atlassian.net/wiki/spaces/DevOps/pages/471793668/Remove+Cluster+-+AWS).
