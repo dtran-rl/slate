@@ -26,7 +26,9 @@ Welcome to CloudOps Training Documentation.
 
 Automation tools:
 - ops-scripts
+
 - ops-cli
+
 - ops-rcp
 
 # Authentication
