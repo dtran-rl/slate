@@ -8,7 +8,7 @@ toc_footers:
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - 1_ops-scripts
+  - ops-scripts
   - errors
 
 search: true
