@@ -3,8 +3,8 @@
 ## Create Cluster
 
 ```shell
-/var/ops-scripts-home/RedisLabs/bin$ mkdir /var/ops-scripts-home/RedisLabs/cluster/zc2-dtran-qa.us-west-1.ec2.qa-cloud.redislabs.com/
-/var/ops-scripts-home/RedisLabs/bin$ cp $DEVOPS_HOME/bin/sample_config.sh $DEVOPS_HOME/cluster/zc2-dtran-qa.us-west-1.ec2.qa-cloud.redislabs.com/config.sh
+$ mkdir $DEVOPS_HOME/cluster/zc2-dtran-qa.us-west-1.ec2.qa-cloud.redislabs.com/
+$ cp $DEVOPS_HOME/bin/sample_config.sh $DEVOPS_HOME/cluster/zc2-dtran-qa.us-west-1.ec2.qa-cloud.redislabs.com/config.sh
 ```
 > sample_config.sh
 
