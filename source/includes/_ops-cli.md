@@ -93,43 +93,25 @@
 
 ## Exercise #1
 
-1. Create single AZ AWS Cluster in us-west
-    * Cluster version - `6.0.12-58`
-    * OS Version - `Ubuntu 18`
-2. Add to Zabbix
-3. Add data nodes of different instance type
-4. Add to BackOffice + dedicate to your account
-5. Create a DB + Replication
-6. Upgrade from `6.0.12-58` to `6.2.18-49`
-7. Replace node:2 as faulty
-    * Observe the cnm_exec.log, cluster_wd.log, node_wd.log
-8. Remove cluster + cleanup
+1. Create Single AZ GCP Cluster - us-west1
+    * Cluster version - 6.0.12-58
+    * OS version - bionic
+2. Add to BO CGs + Create 2+ DBs +R (if region is available in SM, otherwise create DBs in CM)
+3. Replace 1 node with shards as Healthy
+4. Replace 1 node with shards as Faulty
+5. Perform cluster upgrade to Latest RCE version
+6. Remove Cluster + Cleanup
+ 
+## Exercise #2 
 
-## Exercise #2
+1. Create MZ GCP Cluster - us-west1
+2. Add 2 data nodes (maintain balanced AZs)
+3. Add to BO CGs + Create DBs (Use CM if needed)
+4. Replace Healthy + Faulty
+5. Perform cluster upgrade to Latest RCE version
+6. Remove Cluster + Cleanup
+7. Configure VPC peering with each other (Before or After upgrade is fine)
+    * Once with gcloud
+    * Once with GCP Console
 
-1. Create MZ AWS Cluster in us-east-1
-2. Configure as Off-SM Cluster
-    * Can skip mail server step
-3. Add to Zabbix
-4. Create a DB with 4+ master shards using Database Clustering in CM
-5. Scale up a data node using Replace as Healthy
-6. Upgrade from `6.0.12-58` to `6.2.18-49`
-7. Remove cluster + cleanup
-
-**Notes:**
-
-* When re-using the cluster UID/FQDN, some clean up is required
-    * Removing the data folder (.initialized file), $DEVOPS_HOME/cluster/YOUR_CLUSTER_FQDN/data
-    * Clearing VPC details in the config.sh
-    * Chef environment cleanup, one-liner to get commands to run
-    * ```for i in environment node "data bag" client ; do echo knife $i delete `knife $i list | grep CHANGE_TO_YOUR_FQDN` ; done```
-    * Removing your cluster KeyPair from AWS viconsole
-* When creating in us-west-1  observe the limitations of the region's instance types and AZ
-    * May need to specify a different AZ (ex: us-west-1b)
-    * When adding to BackOffice, remember to search for the correct Region
-* When adding cluster to BackOffice Cluster Groups, your account ID may not populate in the autofill
-    * Account's Clusters Page - add your account # as the Account's Default Zone and Account's Default Cluster
-    * Account's Clusters Page - remove my account # from being dedicated to your cluster
-* When removing your cluster from BackOffice CGs, you may see a message regarding the Cluster has BDBs
-    * Verify the DB does not exist on your cluster or your SM UI (+subscription)
-    * Safe to remove cluster from CGs
+[Recording](https://drive.google.com/drive/folders/1XMOmncjGUZq6c_Y9Gp3gRis-OESm8s7r)
