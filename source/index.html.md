@@ -36,7 +36,7 @@ Automation tools:
 Notice
 </aside>
 
-** Table*
+**Table**
 
 Parameter | Default | Description
 --------- | ------- | -----------

@@ -1,6 +1,6 @@
 # ops-scripts
 
-## Create Cluster
+## Create Cluster - AWS
 
 ```shell
 $ mkdir $DEVOPS_HOME/cluster/zc2-dtran-qa.us-west-1.ec2.qa-cloud.redislabs.com/
@@ -93,7 +93,6 @@ ZABBIX_SERVER="zabbix6-qa.redislabs.com"
 * Adding host objects to Zabbix for monitoring
 * Adding to SM/BackOffice to allow access to Cloud service
 
-
 **Document**
 
 * Cluster notes - contains details and configuration specific to the cluster
@@ -101,19 +100,19 @@ ZABBIX_SERVER="zabbix6-qa.redislabs.com"
 
 [Recording](https://drive.google.com/file/d/1Y5iYr72w1P3NrZAHh7Hpa316-mcaEtot/view?usp=drive_link) 
 
-## Add New Node
+## Add New Node - AWS
 [Procedure](https://redislabs.atlassian.net/wiki/spaces/DevOps/pages/438305219/Add+a+New+Node+-+AWS)
 
-## Replace Faulty Node
+## Replace Faulty Node - AWS
 [Procedure](https://redislabs.atlassian.net/wiki/spaces/DevOps/pages/438600189/Replace+Faulty+Node+-+AWS)
 
-## Replace Healthy Node
+## Replace Healthy Node - AWS
 [Procedure](https://redislabs.atlassian.net/wiki/spaces/DevOps/pages/470089741/Replace+Healthy+Node+-+AWS)
 
-## Remove Node
+## Remove Node - AWS
 [Procedure](https://redislabs.atlassian.net/wiki/spaces/DevOps/pages/438338070/Remove+a+Node+-+AWS)
 
-## Remove Cluster
+## Remove Cluster - AWS
 [Procedure](https://redislabs.atlassian.net/wiki/spaces/DevOps/pages/471793668/Remove+Cluster+-+AWS)
 
 ## Exercise #1
