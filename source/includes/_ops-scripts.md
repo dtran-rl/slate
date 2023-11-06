@@ -1,7 +1,6 @@
 # ops-scripts
 
 ## Create Cluster
-[Procedure](https://redislabs.atlassian.net/wiki/spaces/DevOps/pages/471793685/Create+Cluster+-+AWS).
 
 > sample_config.sh
 
@@ -19,10 +18,6 @@ ADD_REPLACE_NODE_AZ=us-east-1a
 REGION=us-east-1
 # Number of instances to launh while using create_all_nodes.sh (note : all instances will be the same type)
 INITIAL_CLUSTER_SIZE=1
-
-# Cluster credentials
-DEFAULT_USERNAME=admin@redislabs.com
-DEFAULT_PASSWORD=admin
 # /ebs volume size. If remarked, /ebs size will be X5 of RAM size.
 #EBS_SIZE=50
 # Create cluster as ROF
@@ -40,15 +35,6 @@ RLEC_BOOTSTRAP=yes
 
 # If yes, maximum statistics history will be "Hour", if no, maximum statistics history will be "Year"
 SERVICE=yes
-
-# This link should be relative to config.sh folder
-LICENSE_FILE=../../bin/key.txt
-# Bucket to use to download a version
-RLEC_DOWNLOAD_BUCKET="https://s3-us-west-2.amazonaws.com/internal-rlec-downloads-automation"
-
-# Cloud cert service
-# If yes, ops-scripts will call cloud-cert-service to obtain new certificate from GlobalSign
-CLOUD_CERT_SERVICE=yes
 
 # VPC based configuration
 USE_VPC=yes
@@ -82,40 +68,18 @@ ENDPOINT_CLIENTS_NETWORK_ADDRESS_SG_1="0.0.0.0/0"
 # IP's/Subnet to be allow for endpoint access (to be define in nodes iptables rules, note : should be empty on cluster that is managed by SM)
 ENDPOINT_CLIENTS_NETWORK_ADDRESS_RULE_1=""
 
-
-# Limbic related parameters
-LIMBIC_USER=
-LIMBIC_PASSWORD=""
-LIMBIC_SERVER="qa.zabbix.garantiadata.com"
-
-
 # ZABBIX RELATED PARAMETERS
-ZABBIX_SERVER="https://zabbix6-qa.redislabs.com/"
-
-# Restricted access in aws related parameters
-RESTRICTED_ACCESS=no
-TAG_NAME=""
-TAG_VALUE=""
-
-# list of additional DNS addresses of the cluster, such as the internal ip of the new cluster.
-# clustermigrate uses this to add the DNS address of the cluster we migrate from.
-# replaces OLD_DNS_ADDRESS, that is deprecated.
-ADDITIONAL_DNS_NAMES_1=""
-
-# Automatic configuration
-CLUSTER_DATA_DIR=${CLUSTER_HOME}/data
-CLUSTER_CHEF_NAME="`echo ${CLUSTER_NAME} | tr '.' '_'`"
-CLUSTER_SECURITY_GROUP=${CLUSTER_NAME}
-CLUSTER_ENVIRONMENT=${CLUSTER_CHEF_NAME}
-CLUSTER_BAG_SECRETFILE=${CLUSTER_DATA_DIR}/chef_bag_secret
-CLUSTER_SSL_CERT=${CLUSTER_DATA_DIR}/ssl_cert.pem
-CLUSTER_SSL_KEY=${CLUSTER_DATA_DIR}/ssl_key.pem
-CLUSTER_BAG_NAME="${CLUSTER_CHEF_NAME}_creds"
-CLUSTER_INIT_FLAG=${CLUSTER_DATA_DIR}/.initialized
-export AWS_DEFAULT_REGION=${REGION}
-
-# Make sure data dir exists
+ZABBIX_SERVER="zabbix6-qa.redislabs.com"
 ```
+[Procedure](https://redislabs.atlassian.net/wiki/spaces/DevOps/pages/471793685/Create+Cluster+-+AWS).
+
+Information Gathering
+- Onboarding Questionnaire
+- Explicit customer confirmation of static IPs and CIDRs provided
+
+Configuration:
+- Populating the config.sh
+
 
 ## Add New Node
 [Procedure](https://redislabs.atlassian.net/wiki/spaces/DevOps/pages/438305219/Add+a+New+Node+-+AWS).
