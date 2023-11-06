@@ -1,17 +1,14 @@
 ---
-title: API Reference
+title: CloudOps Training
 
 language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers
   - shell
-  - ruby
-  - python
-  - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
+  - 1_ops-scripts
   - errors
 
 search: true
@@ -20,12 +17,17 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Documentation for the Kittn API
+    content: Cloud Operations Training
 ---
 
 # Introduction
 
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Welcome to CloudOps Training Documentation.
+
+Automation tools:
+- ops-scripts
+- ops-cli
+- ops-rcp
 
 # Authentication
 
